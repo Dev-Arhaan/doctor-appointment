@@ -1,0 +1,109 @@
+{
+  "appointments": [
+    {
+      "id": "apt_001",
+      "patientName": "John Doe",
+      "age": 35,
+      "symptoms": "Persistent cough and mild fever for 3 days",
+      "appointmentTime": "2024-12-15T10:00:00.000Z",
+      "status": "completed",
+      "doctorId": "doc_001",
+      "createdAt": "2024-12-10T08:00:00.000Z",
+      "updatedAt": "2025-07-03T16:18:12.496Z",
+      "prescription": {
+        "appointmentId": "apt_001",
+        "medicineName": "Amoxicillin",
+        "dosage": "500mg three times daily",
+        "instructions": "Take with food. Complete the full course even if symptoms improve.",
+        "doctorId": "doc_001",
+        "id": "pres_mcnlaq34_5whic",
+        "createdAt": "2025-07-03T16:18:12.496Z"
+      }
+    },
+    {
+      "id": "apt_002",
+      "patientName": "Sarah Johnson",
+      "age": 28,
+      "symptoms": "Migraine headaches and sensitivity to light",
+      "appointmentTime": "2024-12-15T11:30:00.000Z",
+      "status": "scheduled",
+      "doctorId": "doc_001",
+      "createdAt": "2024-12-10T09:15:00.000Z",
+      "updatedAt": "2024-12-10T09:15:00.000Z"
+    },
+    {
+      "id": "apt_003",
+      "patientName": "Mike Chen",
+      "age": 42,
+      "symptoms": "Lower back pain after exercise",
+      "appointmentTime": "2024-12-15T14:00:00.000Z",
+      "status": "completed",
+      "doctorId": "doc_001",
+      "prescription": {
+        "id": "pres_001",
+        "appointmentId": "apt_003",
+        "medicineName": "Ibuprofen",
+        "dosage": "400mg twice daily",
+        "instructions": "Take with food. Apply heat therapy 15 minutes daily.",
+        "createdAt": "2024-12-15T14:30:00.000Z",
+        "doctorId": "doc_001"
+      },
+      "createdAt": "2024-12-10T10:30:00.000Z",
+      "updatedAt": "2024-12-15T14:30:00.000Z"
+    },
+    {
+      "id": "apt_004",
+      "patientName": "Emily Rodriguez",
+      "age": 31,
+      "symptoms": "Allergic reaction - skin rash and itching",
+      "appointmentTime": "2024-12-16T09:00:00.000Z",
+      "status": "scheduled",
+      "doctorId": "doc_001",
+      "createdAt": "2024-12-11T16:45:00.000Z",
+      "updatedAt": "2024-12-11T16:45:00.000Z"
+    },
+    {
+      "id": "apt_005",
+      "patientName": "David Williams",
+      "age": 55,
+      "symptoms": "High blood pressure follow-up",
+      "appointmentTime": "2024-12-16T15:30:00.000Z",
+      "status": "scheduled",
+      "doctorId": "doc_001",
+      "createdAt": "2024-12-12T11:20:00.000Z",
+      "updatedAt": "2024-12-12T11:20:00.000Z"
+    },
+    {
+      "patientName": "Alice Smith",
+      "age": 29,
+      "symptoms": "Chronic headaches and dizziness",
+      "appointmentTime": "2025-12-20T14:30:00.000Z",
+      "doctorId": "doc_001",
+      "status": "scheduled",
+      "id": "apt_mcnl43dz_zob2x",
+      "createdAt": "2025-07-03T16:13:03.143Z",
+      "updatedAt": "2025-07-03T16:13:03.143Z"
+    }
+  ],
+  "prescriptions": [
+    {
+      "id": "pres_001",
+      "appointmentId": "apt_003",
+      "medicineName": "Ibuprofen",
+      "dosage": "400mg twice daily",
+      "instructions": "Take with food. Apply heat therapy 15 minutes daily.",
+      "createdAt": "2024-12-15T14:30:00.000Z",
+      "doctorId": "doc_001"
+    },
+    {
+      "appointmentId": "apt_001",
+      "medicineName": "Amoxicillin",
+      "dosage": "500mg three times daily",
+      "instructions": "Take with food. Complete the full course even if symptoms improve.",
+      "doctorId": "doc_001",
+      "id": "pres_mcnlaq34_5whic",
+      "createdAt": "2025-07-03T16:18:12.496Z"
+    }
+  ],
+  "lastUpdated": "2025-07-03T16:18:12.496Z"
+}
