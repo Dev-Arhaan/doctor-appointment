@@ -9,16 +9,13 @@ class DataService {
     this.dataPath = path.join(__dirname, '../data/appointments.json');
   }
 
-  /**
-   * Read data from JSON file
-   */
+ 
   private async readData(): Promise<DatabaseSchema> {
     try {
       const data = await fs.readFile(this.dataPath, 'utf-8');
       return JSON.parse(data);
     } catch (error) {
       console.error('Error reading data file:', error);
-      // Return empty structure if file doesn't exist
       return {
         appointments: [],
         prescriptions: [],
@@ -27,9 +24,7 @@ class DataService {
     }
   }
 
-  /**
-   * Write data to JSON file
-   */
+
   private async writeData(data: DatabaseSchema): Promise<void> {
     try {
       data.lastUpdated = new Date().toISOString();
@@ -40,9 +35,6 @@ class DataService {
     }
   }
 
-  /**
-   * Get all appointments with optional filters
-   */
   async getAppointments(filters?: AppointmentFilters): Promise<Appointment[]> {
     const data = await this.readData();
     let appointments = data.appointments;
@@ -67,17 +59,12 @@ class DataService {
     );
   }
 
-  /**
-   * Get a single appointment by ID
-   */
+
   async getAppointmentById(id: string): Promise<Appointment | null> {
     const data = await this.readData();
     return data.appointments.find(apt => apt.id === id) || null;
   }
 
-  /**
-   * Create a new appointment
-   */
   async createAppointment(appointmentData: Omit<Appointment, 'id' | 'createdAt' | 'updatedAt'>): Promise<Appointment> {
     const data = await this.readData();
     
@@ -94,9 +81,7 @@ class DataService {
     return newAppointment;
   }
 
-  /**
-   * Update an existing appointment
-   */
+
   async updateAppointment(id: string, updates: Partial<Appointment>): Promise<Appointment | null> {
     const data = await this.readData();
     const appointmentIndex = data.appointments.findIndex(apt => apt.id === id);
@@ -115,13 +100,10 @@ class DataService {
     return data.appointments[appointmentIndex];
   }
 
-  /**
-   * Create a prescription for an appointment
-   */
+
   async createPrescription(prescriptionData: Omit<Prescription, 'id' | 'createdAt'>): Promise<Prescription | null> {
     const data = await this.readData();
     
-    // Check if appointment exists
     const appointment = data.appointments.find(apt => apt.id === prescriptionData.appointmentId);
     if (!appointment) {
       return null;
@@ -133,10 +115,8 @@ class DataService {
       createdAt: new Date().toISOString()
     };
 
-    // Add prescription to prescriptions array
     data.prescriptions.push(newPrescription);
     
-    // Update appointment with prescription
     const appointmentIndex = data.appointments.findIndex(apt => apt.id === prescriptionData.appointmentId);
     if (appointmentIndex !== -1) {
       data.appointments[appointmentIndex].prescription = newPrescription;
@@ -148,9 +128,6 @@ class DataService {
     return newPrescription;
   }
 
-  /**
-   * Get prescription by appointment ID
-   */
   async getPrescriptionByAppointmentId(appointmentId: string): Promise<Prescription | null> {
     const data = await this.readData();
     return data.prescriptions.find(pres => pres.appointmentId === appointmentId) || null;
@@ -165,9 +142,6 @@ class DataService {
     return `${prefix}_${timestamp}_${randomStr}`;
   }
 
-  /**
-   * Health check method
-   */
   async healthCheck(): Promise<{ status: string; appointmentsCount: number; prescriptionsCount: number }> {
     try {
       const data = await this.readData();

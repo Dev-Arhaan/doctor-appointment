@@ -15,7 +15,6 @@ export class AppointmentController {
         date: req.query.date as string
       };
 
-      // Remove undefined values
       Object.keys(filters).forEach(key => {
         if (filters[key as keyof AppointmentFilters] === undefined) {
           delete filters[key as keyof AppointmentFilters];

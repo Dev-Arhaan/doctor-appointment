@@ -1,5 +1,3 @@
-// src/utils/logger.ts
-
 export const logger = {
   info: (message: string, data?: any) => {
     console.log(`[INFO] ${new Date().toISOString()}: ${message}`, data || '');

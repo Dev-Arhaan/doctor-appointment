@@ -3,7 +3,7 @@ export interface Appointment {
   patientName: string;
   age: number;
   symptoms: string;
-  appointmentTime: string; // ISO string format
+  appointmentTime: string; 
   status: 'scheduled' | 'completed' | 'cancelled';
   doctorId: string;
   prescription?: Prescription;
