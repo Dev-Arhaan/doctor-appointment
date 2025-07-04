@@ -68,10 +68,19 @@
       "age": 55,
       "symptoms": "High blood pressure follow-up",
       "appointmentTime": "2024-12-16T15:30:00.000Z",
-      "status": "scheduled",
+      "status": "completed",
       "doctorId": "doc_001",
       "createdAt": "2024-12-12T11:20:00.000Z",
-      "updatedAt": "2024-12-12T11:20:00.000Z"
+      "updatedAt": "2025-07-04T19:28:29.050Z",
+      "prescription": {
+        "appointmentId": "apt_005",
+        "medicineName": "Penicillin ",
+        "dosage": "500mg three times a day",
+        "instructions": "Mauj masti",
+        "doctorId": "doc_001",
+        "id": "pres_mcp7j9tm_fxwky",
+        "createdAt": "2025-07-04T19:28:29.050Z"
+      }
     },
     {
       "patientName": "Alice Smith",
@@ -103,7 +112,16 @@
       "doctorId": "doc_001",
       "id": "pres_mcnlaq34_5whic",
       "createdAt": "2025-07-03T16:18:12.496Z"
+    },
+    {
+      "appointmentId": "apt_005",
+      "medicineName": "Penicillin ",
+      "dosage": "500mg three times a day",
+      "instructions": "Mauj masti",
+      "doctorId": "doc_001",
+      "id": "pres_mcp7j9tm_fxwky",
+      "createdAt": "2025-07-04T19:28:29.050Z"
     }
   ],
-  "lastUpdated": "2025-07-03T16:18:12.496Z"
+  "lastUpdated": "2025-07-04T19:28:29.050Z"
 }

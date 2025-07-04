@@ -8,12 +8,7 @@ interface AppointmentCardProps {
   appointment: Appointment;
 }
 
-/**
- * A reusable card component to display a summary of an appointment.
- * It is wrapped in a Link to navigate to the appointment's detail screen.
- */
 const AppointmentCard: React.FC<AppointmentCardProps> = ({ appointment }) => {
-  // Format the date and time to be more readable for the user.
   const formattedTime = new Date(appointment.appointmentTime).toLocaleString([], {
     year: 'numeric',
     month: 'long',
@@ -24,8 +19,6 @@ const AppointmentCard: React.FC<AppointmentCardProps> = ({ appointment }) => {
   });
 
   return (
-    // `asChild` prop passes the press event to the child `TouchableOpacity`.
-    // This is the recommended way to make custom components navigable with expo-router.
     <Link href={`/appointment/${appointment.id}`} asChild>
       <TouchableOpacity style={styles.card}>
         <View style={styles.header}>
@@ -53,12 +46,10 @@ const styles = StyleSheet.create({
     padding: 16,
     marginHorizontal: 16,
     marginVertical: 8,
-    // iOS shadow
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
-    // Android shadow
     elevation: 3,
   },
   header: {
@@ -75,7 +66,7 @@ const styles = StyleSheet.create({
   statusContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#0000000D', // a very light, transparent background
+    backgroundColor: '#0000000D', 
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 12,

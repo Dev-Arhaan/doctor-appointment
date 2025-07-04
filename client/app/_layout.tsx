@@ -4,8 +4,6 @@ import { store } from '../store/store';
 
 export default function RootLayout() {
   return (
-    // The Provider makes the Redux store available to any nested components
-    // that need to access the Redux store.
     <Provider store={store}>
       <Stack>
         <Stack.Screen

@@ -1,7 +1,3 @@
-/**
- * A central place for defining the color palette for the app.
- * This makes it easy to maintain a consistent look and feel.
- */
 export const Colors = {
   primary: '#007AFF', // A standard blue for interactive elements
   background: '#F2F2F7', // A light gray for screen backgrounds
