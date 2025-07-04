@@ -31,14 +31,15 @@ app.use(helmet({
 }));
 
 // CORS configuration
-app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-frontend-domain.com'] 
-    : ['http://localhost:3000', 'http://localhost:19006', 'exp://127.0.0.1:19000'], // Local development
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-}));
+// app.use(cors({
+//   origin: process.env.NODE_ENV === 'production' 
+//     ? ['https://your-frontend-domain.com'] 
+//     : ['http://localhost:3000', 'http://localhost:19006', 'exp://127.0.0.1:19000', 'http://192.168.1.18:8081'], // Local development
+//   credentials: true,
+//   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+// }));
+app.use(cors())
 
 // Logging middleware
 app.use(morgan('combined', {
